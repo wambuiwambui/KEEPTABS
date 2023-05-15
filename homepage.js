@@ -1,7 +1,7 @@
 const welcomeTemplate = Handlebars.compile(document.querySelector('#welcome-template').innerHTML);
 
 const currentUser = {
-  username: "Kennedy Nyamai"
+  username: "Njoki"
 };
 
 const welcomeMessage = welcomeTemplate(currentUser);

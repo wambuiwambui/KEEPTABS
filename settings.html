@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KEEPTABS DEVS - Settings</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+  </head>
+  <body>
+    <header>
+      <h1>KEEPTABS</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="employee-list.html">Employee List</a></li>
+        <li><a href="add-employee.html">Add Employee</a></li>
+        <li class="active"><a href="#">Settings</a></li>
+        <li><a href="#" id="logout-link">Log Out</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="settings">
+        <h2>Settings</h2>
+        <form>
+          <label for="timezone">Timezone:</label>
+          <select id="timezone" name="timezone">
+            <option value="est">EST</option>
+            <option value="cst">CST</option>
+            <option value="mst">MST</option>
+            <option value="pst">PST</option>
+          </select>
+          <br><br>
+          <label for="language">Language:</label>
+          <select id="language" name="language">
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+            <option value="french">French</option>
+            <option value="german">German</option>
+          </select>
+          <br><br>
+          <label for="notifications">Notifications:</label>
+          <input type="checkbox" id="notifications" name="notifications">
+          <br><br>
+          <input type="submit" value="Save Changes">
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 KEEPTABS</p>
+    </footer>
+  </body>
+</html>
