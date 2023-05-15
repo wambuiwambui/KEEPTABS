@@ -1,75 +1,118 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>KEEPTABS DEVS - Dashboard</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="homepage.css">
-  </head>
-  <body>
-    <header>
-      <h1>KEEPTABS</h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#employee-list">Employee List</a></li>
-        <li><a href="#add-employee">Add Employee</a></li>
-        <li><a href="#settings">Settings</a></li>
-        <li> <a href="#" id="logout-link">Log Out</a></li>
-      </ul>
-    </nav>
-    <main>
-      <section id="home">
-        <h2>Home</h2>
-        <p>Welcome to our app</p>
-      </section>
-      <section id="dashboard" style="display:none;">
-        <h2>Dashboard</h2>
-        <p>Track every employee's information here.</p>
-      </section>
-      <section id="employee-list" style="display:none;">
-        <h2>Employee List</h2>
-        <p>View a list of all your employees here.</p>
-      </section>
-      <section id="add-employee" style="display:none;">
-        <h2>Add Employee</h2>
-        <p>Add a new employee to the database.</p>
-      </section>
-      <section id="settings" style="display:none;">
-        <h2>Settings</h2>
-        <p>Adjust settings and preferences.</p>
-      </section>
-      <h2 id="welcome-message"></h2>
-      <p>Get ready to clock in and rock on with our employee app! We've got your info covered and your time logged, so you can focus on doing what you do best - making work a party!.</p>
-    </main>
-    <footer>
-      <p>&copy; 2023 KEEPTABS</p>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-    <script id="welcome-template" type="text/x-handlebars-template">
-      <h2>Welcome {{username}} !</h2>
-      <button id="logout-button"> Log Out</button>
-    </script>
-    <script src="homepage.js"></script>
-
-    <script>
-      // function to handle click events on navigation links
-      const navLinks = document.querySelectorAll('nav ul li a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', e => {
-          e.preventDefault();
-          const targetId = link.getAttribute('href');
-          const targetSection = document.querySelector(targetId);
-          const sections = document.querySelectorAll('main section');
-          sections.forEach(section => {
-            if (section !== targetSection) {
-              section.style.display = 'none';
-            }
-          });
-          targetSection.style.display = 'block';
-        });
-      });
-    </script>
-  </body>
-</html>
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  /* Navigation Styles */
+  nav {
+    background-color: #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+  }
+  
+  nav ul li a:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Form Styles */
+  form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Table Styles */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+  }

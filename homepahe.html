@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KEEPTABS DEVS - Dashboard</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+  </head>
+  <body>
+    <header>
+      <h1>KEEPTABS</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#employee-list">Employee List</a></li>
+        <li><a href="#add-employee">Add Employee</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li> <a href="#" id="logout-link">Log Out</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to our app</p>
+      </section>
+      <section id="dashboard" style="display:none;">
+        <h2>Dashboard</h2>
+        <p>Track every employee's information here.</p>
+      </section>
+      <section id="employee-list" style="display:none;">
+        <h2>Employee List</h2>
+        <p>View a list of all your employees here.</p>
+      </section>
+      <section id="add-employee" style="display:none;">
+        <h2>Add Employee</h2>
+        <p>Add a new employee to the database.</p>
+      </section>
+      <section id="settings" style="display:none;">
+        <h2>Settings</h2>
+        <p>Adjust settings and preferences.</p>
+      </section>
+      <h2 id="welcome-message"></h2>
+      <p>Get ready to clock in and rock on with our employee app! We've got your info covered and your time logged, so you can focus on doing what you do best - making work a party!.</p>
+    </main>
+    <footer>
+      <p>&copy; 2023 KEEPTABS</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script id="welcome-template" type="text/x-handlebars-template">
+      <h2>Welcome {{username}} !</h2>
+      <button id="logout-button"> Log Out</button>
+    </script>
+    <script src="homepage.js"></script>
+
+    <script>
+      // function to handle click events on navigation links
+      const navLinks = document.querySelectorAll('nav ul li a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          const sections = document.querySelectorAll('main section');
+          sections.forEach(section => {
+            if (section !== targetSection) {
+              section.style.display = 'none';
+            }
+          });
+          targetSection.style.display = 'block';
+        });
+      });
+    </script>
+  </body>
+</html>
