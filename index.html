@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KEEPTABS DEVS - Main Page</title>
+    <title>KEEPTABS App</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="homepage.css">
   </head>
@@ -11,28 +11,68 @@
     </header>
     <nav>
       <ul>
-        <li><a href="#home">Home</a></li>
+        <li><a href="#login">Login</a></li>
         <li><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#employee-list">Employee List</a></li>
-        <li><a href="#add-employee">Add Employee</a></li>
+        <li><a href="#employee">Employee List</a></li>
         <li><a href="#settings">Settings</a></li>
-        <li> <a href="#" id="logout-link">Log Out</a></li>
+        <li><a href="#logout">Log Out</a></li>
       </ul>
     </nav>
     <main>
-      <!-- The content of the pages will be loaded here -->
+      <section id="dashboard" style="display:none;">
+        <h2>Login</h2>
+        <object data="dashboard.html"></object>
+      </section>
+      <section id="dashboard" style="display:none;">
+        <h2>Dashboard</h2>
+        <object data="dashboard.html"></object>
+      </section>
+      <section id="employee" style="display:none;">
+        <h2>Employee List</h2>
+        <object data="employee.html"></object>
+      </section>
+      <section id="settings" style="display:none;">
+        <h2>Settings</h2>
+        <object data="settings.html"></object>
+      </section>
+      <section id="logout" style="display:none;">
+        <h2>Log Out</h2>
+        <object data="logout.html"></object>
+      </section>
+      <h2>Welcome to KEEPTABS</h2>
+      <p>Get ready to clock in and rock on with our employee app! We've got your info covered and your time logged, so you can focus on doing what you do best - making work a party!</p>
     </main>
     <footer>
       <p>&copy; 2023 KEEPTABS</p>
     </footer>
-    
-    <!-- The scripts for the pages will be loaded here -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script id="welcome-template" type="text/x-handlebars-template">
+      <h2>Welcome {{username}} !</h2>
+    </script>
     <script src="homepage.js"></script>
-    <script src="dashboard.js"></script>
-    <script src="addemployee.js"></script>
-    <script src="employeelist.js"></script>
-    <script src="settings.js"></script>
+    <script>
+      // Get all the navigation links
+      const navLinks = document.querySelectorAll('nav ul li a');
+
+      // Get all the sections
+      const sections = document.querySelectorAll('main section');
+
+      // Loop through each navigation link and add a click event listener
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          // Get the section to show based on the link's href attribute
+          const sectionToShow = document.querySelector(link.getAttribute('href'));
+
+          // Loop through each section and hide it
+          sections.forEach(section => {
+            section.style.display = 'none';
+          });
+
+          // Show the section that matches the link clicked
+          sectionToShow.style.display = 'block';
+        });
+      });
+    </script>
   </body>
 </html>
 

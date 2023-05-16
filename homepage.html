@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,10 +15,9 @@
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#employee-list">Employee List</a></li>
-        <li><a href="#add-employee">Add Employee</a></li>
+        <li><a href="#employee">Employee List</a></li>
         <li><a href="#settings">Settings</a></li>
-        <li> <a href="#" id="logout-link">Log Out</a></li>
+        <li> <a href="#" id="logout-link"></a>log Out</li>
       </ul>
     </nav>
     <main>
@@ -26,14 +27,17 @@
       </section>
       <section id="dashboard" style="display:none;">
         <h2>Dashboard</h2>
-        <p>Track every employee's information here.</p>
+        <object data="dashboard.html"></object>
       </section>
       <section id="employee-list" style="display:none;">
         <h2>Employee List</h2>
-        <p>View a list of all your employees here.</p>
+        <object data="dashboard.html"></object>
+        <object data="employee.html"></object>
+        <object data="settings.html"></object>
+        <object data="logout.html"></object>
       </section>
-      <section id="add-employee" style="display:none;">
-        <h2>Add Employee</h2>
+      <section id="employee" style="display:none;">
+        <h2>Employee</h2>
         <p>Add a new employee to the database.</p>
       </section>
       <section id="settings" style="display:none;">
@@ -42,6 +46,8 @@
       </section>
       <h2 id="welcome-message"></h2>
       <p>Get ready to clock in and rock on with our employee app! We've got your info covered and your time logged, so you can focus on doing what you do best - making work a party!.</p>
+      <iframe src="footer.html" frameborder="0" width="100%" height="100"></iframe>
+
     </main>
     <footer>
       <p>&copy; 2023 KEEPTABS</p>
